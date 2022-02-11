@@ -7,7 +7,7 @@
             "title": "Home",
             "target": "/",
             "info": {
-                "photo": "/resource/photo.png",
+                "photo": "/home-test/resource/photo.png",
                 "title": "Name",
                 "description": "descriptiondescriptiondescriptiondescriptiondescriptiondescription",
                 "welcome": "Welcome!",
@@ -33,7 +33,7 @@
                         "buttons": [
                             {
                                 "title": "Pdf",
-                                "target": "/resource/cv.pdf"
+                                "target": "/home-test/resource/cv.pdf"
                             },
                             {
                                 "title": "Google",
@@ -49,7 +49,7 @@
                         "buttons": [
                             {
                                 "title": "Link",
-                                "target": "/resource/cv.pdf"
+                                "target": "/home-test/resource/cv.pdf"
                             },
                             {
                                 "title": "Link",
@@ -63,7 +63,7 @@
         },
         {
             "title": "CV",
-            "target": "/resource/cv.pdf"
+            "target": "/home-test/resource/cv.pdf"
         }
     ]
 }
