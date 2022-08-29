@@ -35,7 +35,7 @@ export default () => {
     const getCardStyle = useCallback(
         (index: number) => {
             const count = width < 600 ? 1 : pageInfo.cardRowCount || 1;
-            const res: any = {
+            const res: React.CSSProperties = {
                 maxWidth: `calc(${100 / count}vw - ${80 / count}px - 9px)`,
             };
             if (pageInfo.width) {
@@ -64,12 +64,10 @@ export default () => {
                 {allCategory.map((c) => (
                     <TabPane tab={c} key={c}>
                         {pageInfo.cards
-                            ?.filter((card: any) =>
-                                c === 'All' ? true : card.category?.includes(c),
-                            )
+                            ?.filter((card) => (c === 'All' ? true : card.category?.includes(c)))
                             ?.map(
                                 (
-                                    { title, subTitle, description, buttons, picture }: any,
+                                    { title, subTitle, description, buttons, picture },
                                     index: number,
                                 ) => (
                                     <div
@@ -101,9 +99,9 @@ export default () => {
                                         <p style={configStyle.research.card.description}>
                                             {description}
                                         </p>
-                                        {buttons?.map((btn: any, btIndex: number) => (
+                                        {buttons?.map((btn, btnIndex: number) => (
                                             <Button
-                                                key={btIndex}
+                                                key={btnIndex}
                                                 ghost
                                                 type="primary"
                                                 onClick={() => {
