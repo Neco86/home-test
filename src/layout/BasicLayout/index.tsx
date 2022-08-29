@@ -3,6 +3,7 @@ import { createContext, useCallback, useContext, useEffect, useState } from 'rea
 import { history } from 'umi';
 import styles from './index.less';
 import { MenuOutlined } from '@ant-design/icons';
+import type { Config, PageInfo } from '@/config.d';
 
 export const DEFAULT_CONFIG = {
     title: '',
@@ -23,32 +24,32 @@ export const DEFAULT_CONFIG = {
             title: {},
             card: {
                 title: {},
-                subtitle: {},
+                subTitle: {},
                 description: {},
+                picture: {},
                 buttons: {},
             },
         },
     },
 };
 
-const GlobalContext = createContext(DEFAULT_CONFIG);
+const GlobalContext = createContext(DEFAULT_CONFIG as Config);
 const { SubMenu } = Menu;
 
-export const useConfigStyle: any = () => {
+export const useConfigStyle = () => {
     const config = useContext(GlobalContext);
     return config.styles;
 };
 
-export const usePageInfo: any = () => {
+export const usePageInfo = () => {
     const config = useContext(GlobalContext);
     const pageInfo =
-        (config.pages.find((item: any) => item.target === history.location.pathname) as any)
-            ?.info ?? {};
-    return pageInfo;
+        config.pages.find((item) => item.target === history.location.pathname)?.info ?? {};
+    return pageInfo as PageInfo;
 };
 
-export default ({ children }: any) => {
-    const [config, setConfig] = useState<any>(DEFAULT_CONFIG);
+export default ({ children }: { children: React.FC }) => {
+    const [config, setConfig] = useState<Config>(DEFAULT_CONFIG);
     useEffect(() => {
         fetch(`./config.json?t=${Date.now()}`)
             .then((res) => res.json())
@@ -83,7 +84,7 @@ export default ({ children }: any) => {
                     onClick={handleClick}
                     className={styles.menu1}
                 >
-                    {config.pages.map(({ title, target }: any) => (
+                    {config.pages.map(({ title, target }) => (
                         <Menu.Item key={target}>{title}</Menu.Item>
                     ))}
                 </Menu>
@@ -94,7 +95,7 @@ export default ({ children }: any) => {
                     className={styles.menu2}
                 >
                     <SubMenu title={<MenuOutlined className={styles.expend} />}>
-                        {config.pages.map(({ title, target }: any) => (
+                        {config.pages.map(({ title, target }) => (
                             <Menu.Item key={target}>{title}</Menu.Item>
                         ))}
                     </SubMenu>
