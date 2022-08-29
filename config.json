@@ -1,13 +1,13 @@
 {
     "title": "Sophie Jiarui Wang",
-    "icon": "/resource/icon.ico",
+    "icon": "./resource/icon.ico",
     "footer": "Copyright 2022 © Sophie Wang. All Rights Reserved.",
     "pages": [
         {
             "title": "Home",
             "target": "/",
             "info": {
-                "photo": "/resource/websitepic.jpg",
+                "photo": "./resource/websitepic.jpg",
                 "title": "",
                 "description": "I am a huge fan of the Lord of the Rings!",
                 "welcome": "Welcome! ❤️",
@@ -30,11 +30,11 @@
                         "title": "From Thoughts to Words: Exploring Misarticulation through Texts",
                         "subTitle": "with Rafael M. Batista",
                         "description": "People sometimes feel that what they have said is not quite what they meant to say. This psychological experience is referred to as “misarticulation”, meaning the subjective sense of not having fully expressed or communicated what one has in mind. While existing literature focuses more on the underlying process of information transmission in communications, misarticulation highlights the experience of the communicators themselves. This study uses Natural Language Processing techniques to explore whether misarticulation is predictable through texts.",
-                        "picture": "/resource/test.png",
+                        "picture": "./resource/test.png",
                         "buttons": [
                             {
                                 "title": "Slides",
-                                "target": "/resource/misarticulation_pre.pdf"
+                                "target": "./resource/misarticulation_pre.pdf"
                             }
                         ],
                         "category": ["Selected Projects"]
@@ -73,7 +73,7 @@
         },
         {
             "title": "Curriculum Vitae",
-            "target": "/resource/SOPHIE CV_2022.05.pdf"
+            "target": "./resource/SOPHIE CV_2022.05.pdf"
         }
     ],
     "styles": {
